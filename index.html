@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoriza CESF | Administração</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button><div><small>Painel administrativo</small><h1>Dashboard</h1></div><div class="avatar">AD</div></header>
+      <section class="welcome"><div><p class="eyebrow">AUTORIZA CESF</p><h2>Bem-vindo(a), administrador!</h2><p>Acompanhe as atividades e gerencie o sistema da escola.</p></div><div class="welcome-icon">✓</div></section>
+      <section class="stats">
+        <article class="stat-card lilac"><span>Usuários cadastrados</span><strong id="userCount">0</strong><small>Professores e monitores</small></article>
+        <article class="stat-card blue"><span>Alunos cadastrados</span><strong id="studentCount">0</strong><small>Em todas as turmas</small></article>
+        <article class="stat-card green"><span>Autorizações hoje</span><strong id="todayCount">0</strong><small>Registros do dia</small></article>
+        <article class="stat-card amber"><span>Pendentes</span><strong id="pendingCount">0</strong><small>Aguardando acompanhamento</small></article>
+      </section>
+      <section class="content-grid">
+        <article class="panel"><div class="panel-heading"><div><h3>Autorizações recentes</h3><p>Últimas movimentações registradas</p></div><a href="autorizacoes.html">Ver todas</a></div>
+          <div class="table-wrap"><table><thead><tr><th>Aluno</th><th>Destino</th><th>Horário</th><th>Situação</th></tr></thead><tbody id="recentRows"></tbody></table></div>
+        </article>
+        <article class="panel"><div class="panel-heading"><div><h3>Acesso rápido</h3><p>Gerencie as principais áreas</p></div></div><div class="quick-links">
+          <a href="usuarios.html"><span>♙</span> Gerenciar usuários</a><a href="alunos.html"><span>▤</span> Alunos e turmas</a><a href="locais.html"><span>⌖</span> Locais e setores</a><a href="relatorios.html"><span>▥</span> Relatórios</a>
+        </div></article>
+      </section>
+      <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body></html>

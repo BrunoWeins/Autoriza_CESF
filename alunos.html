@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos e Turmas | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="alunos">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Alunos e Turmas</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Consulte e organize os alunos cadastrados na escola.</p>
+            </div>
+            <div class="toolbar"><input class="search" id="studentSearch" placeholder="Buscar aluno ou turma..."><button
+                    class="primary" data-open-modal="studentModal">＋ Cadastrar aluno</button></div>
+            <section class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Alunos cadastrados</h3>
+                        <p>Lista organizada por turma</p>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Turma</th>
+                                <th>Matrícula</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentRows"></tbody>
+                    </table>
+                </div>
+            </section>
+            <div class="modal" id="studentModal">
+                <form class="modal-card" id="studentForm"><button type="button" class="close" data-close>×</button>
+                    <h2>Cadastrar aluno</h2><label>Nome completo<input name="name" required></label><label>Turma<input
+                            name="class" required placeholder="Ex.: 3º A"></label><label>Matrícula (opcional)<input
+                            name="code"></label><button class="primary">Salvar aluno</button>
+                </form>
+            </div>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/professor.css">
+</head>
+
+<body class="login-page">
+    <main class="login-card"><a class="back-link" href="acesso.html">←</a>
+        <h1>Entrar</h1>
+        <form id="loginForm"><label>E-mail<input type="email" required
+                    placeholder="E-mail da escola"></label><label>Senha<input type="password" required
+                    placeholder="Digite sua senha"></label><button class="role-button" type="submit">CONTINUAR</button>
+        </form>
+        <p class="login-note">Protótipo: use qualquer e-mail e senha para navegar.</p>
+    </main>
+    <script>const perfil = new URLSearchParams(location.search).get('perfil') || 'professor'; document.getElementById('loginForm').addEventListener('submit', e => { e.preventDefault(); sessionStorage.setItem('cesf_perfil', perfil); location.href = perfil === 'admin' ? 'index.html' : perfil === 'monitor' ? 'monitor.html' : 'professor.html'; });</script>
+</body>
+
+</html>

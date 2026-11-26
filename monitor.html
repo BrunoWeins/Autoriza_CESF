@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/professor.css">
+</head>
+
+<body class="monitor-page">
+    <header class="prof-header"><a href="acesso.html">←</a>
+        <div class="mini-logo">Monitor · CESF <b>◒</b></div>
+        <div class="header-actions"><a class="switch-role" href="professor.html">Trocar perfil</a><a class="logout-link"
+                href="acesso.html" onclick="sessionStorage.clear()">Sair</a></div>
+    </header>
+    <main class="monitor-wrap">
+        <h1>Autorizações recebidas</h1>
+        <p>Solicitações enviadas pelos professores neste navegador.</p>
+        <div id="monitorList"></div>
+    </main>
+    <script>
+        function renderMonitor() {
+            const list = JSON.parse(localStorage.getItem('cesf_prof_auth') || '[]');
+            const root = document.getElementById('monitorList');
+            root.innerHTML = list.length ? list.map((a, i) => `<article class="monitor-item"><span class="pending-label">${a.status || 'PENDENTE'}</span><h2>${a.student}</h2><p><b>Professor:</b> ${a.teacher || '—'}</p><p><b>Turma:</b> ${a.class}</p><p><b>Destino:</b> ${a.place}</p><p><b>Data:</b> ${a.date} · ${a.time}</p><button ${a.status === 'Liberada' ? 'disabled' : ''} data-release="${i}">${a.status === 'Liberada' ? 'LIBERADA' : 'LIBERAR'}</button></article>`).join('') : '<div class="empty-state">Nenhuma autorização recebida ainda.</div>';
+        }
+        document.addEventListener('click', e => {
+            const b = e.target.closest('[data-release]');
+            if (!b) return;
+            const list = JSON.parse(localStorage.getItem('cesf_prof_auth') || '[]');
+            const i = Number(b.dataset.release);
+            if (list[i]) { list[i].status = 'Liberada'; localStorage.setItem('cesf_prof_auth', JSON.stringify(list)); localStorage.setItem('ac_auth', JSON.stringify(list)); renderMonitor(); }
+        });
+        renderMonitor();
+    </script>
+</body>
+
+</html>

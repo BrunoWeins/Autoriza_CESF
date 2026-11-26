@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="relatorios">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Relatórios</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Visualize um resumo das autorizações registradas no sistema.</p>
+            </div>
+            <section class="stats report-stats">
+                <article class="stat-card lilac"><span>Total de autorizações</span><strong
+                        id="reportTotal">0</strong><small>Registros cadastrados</small></article>
+                <article class="stat-card green"><span>Concluídas</span><strong
+                        id="reportDone">0</strong><small>Autorizações liberadas</small></article>
+                <article class="stat-card amber"><span>Pendentes</span><strong
+                        id="reportPending">0</strong><small>Aguardando acompanhamento</small></article>
+                <article class="stat-card blue"><span>Recusadas</span><strong
+                        id="reportRefused">0</strong><small>Registros recusados</small></article>
+            </section>
+            <section class="content-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Resumo dos registros</h3>
+                            <p>Os dados aparecem conforme as autorizações são cadastradas.</p>
+                        </div>
+                    </div>
+                    <div class="empty-state" id="reportSummary">Ainda não existem autorizações suficientes para gerar um
+                        relatório.</div>
+                </article>
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Relatório por local</h3>
+                            <p>Será preenchido automaticamente com os registros reais.</p>
+                        </div>
+                    </div>
+                    <div class="empty-state">Nenhum dado para exibir ainda.</div>
+                </article>
+            </section>
+            <p class="notice" id="reportEmpty">Ainda não existem autorizações suficientes para gerar um relatório. Os
+                indicadores serão preenchidos conforme os registros forem adicionados.</p>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

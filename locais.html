@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais e Setores | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="locais">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Locais e Setores</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Configure os destinos disponíveis no formulário de autorização.</p>
+            </div>
+            <div class="toolbar">
+                <div>
+                    <p class="muted">Os locais ativos aparecem para os professores ao criar uma autorização.</p>
+                </div><button class="primary" data-open-modal="placeModal">＋ Adicionar local</button>
+            </div>
+            <section class="place-grid" id="placeGrid"></section>
+            <div class="modal" id="placeModal">
+                <form class="modal-card" id="placeForm"><button type="button" class="close" data-close>×</button>
+                    <h2>Adicionar local</h2><label>Nome do local<input name="name" required
+                            placeholder="Ex.: Laboratório"></label><label>Categoria<select name="category">
+                            <option>Setor</option>
+                            <option>Banheiro</option>
+                            <option>Biblioteca</option>
+                            <option>Outro</option>
+                        </select></label><button class="primary">Adicionar local</button>
+                </form>
+            </div>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

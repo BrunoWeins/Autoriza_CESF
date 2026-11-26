@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="configuracoes">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Configurações</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Personalize as preferências gerais do protótipo.</p>
+            </div>
+            <section class="panel settings-list">
+                <div class="setting-row">
+                    <div><b>Notificações</b>
+                        <p>Exibir avisos sobre novas autorizações.</p>
+                    </div><label class="switch"><input type="checkbox" checked><span></span></label>
+                </div>
+                <div class="setting-row">
+                    <div><b>Nome do sistema</b>
+                        <p>Autoriza CESF</p>
+                    </div><span class="muted">Versão 1.0.0</span>
+                </div>
+                <div class="setting-row">
+                    <div><b>Perfil administrativo</b>
+                        <p>Administrador do sistema</p>
+                    </div><span class="badge success">Ativo</span>
+                </div>
+                <div class="setting-row">
+                    <div><b>Privacidade</b>
+                        <p>Os dados de alunos devem ser acessados somente por pessoas autorizadas.</p>
+                    </div>
+                </div>
+            </section>
+            <p class="notice">Este protótipo não possui login real nem salva dados em um servidor. Isso será
+                implementado na etapa de integração.</p>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

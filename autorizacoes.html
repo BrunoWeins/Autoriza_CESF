@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorizações | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="autorizacoes">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Autorizações</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Acompanhe os registros de saída enviados pelos professores.</p>
+            </div>
+            <div class="toolbar">
+                <div class="tabs"><button class="tab active" data-status-filter="Todas">Todas</button><button
+                        class="tab" data-status-filter="Pendente">Pendentes</button><button class="tab"
+                        data-status-filter="Liberada">Liberadas</button><button class="tab"
+                        data-status-filter="Recusada">Recusadas</button></div><input class="search"
+                    id="authorizationSearch" placeholder="Buscar aluno, professor ou destino...">
+            </div>
+            <section class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Histórico de autorizações</h3>
+                        <p>Informações para acompanhamento administrativo</p>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Professor</th>
+                                <th>Turma</th>
+                                <th>Destino</th>
+                                <th>Data e horário</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="authorizationRows"></tbody>
+                    </table>
+                </div>
+            </section>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

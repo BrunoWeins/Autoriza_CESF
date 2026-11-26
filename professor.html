@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/professor.css">
+</head>
+
+<body class="professor-page">
+    <header class="prof-header"><a href="acesso.html">←</a>
+        <div class="mini-logo">Professor · CESF <b>◒</b></div>
+        <div class="header-actions"><a class="switch-role" href="monitor.html">Trocar perfil</a><a class="logout-link"
+                href="acesso.html" onclick="sessionStorage.clear()">Sair</a></div>
+    </header>
+    <main class="professor-wrap">
+        <section class="prof-form-card">
+            <div class="prof-heading"><span class="prof-symbol">✓</span>
+                <div>
+                    <h1>Nova autorização</h1>
+                    <p>Preencha os dados para liberar a saída do aluno.</p>
+                </div>
+            </div>
+            <form id="authorizationForm"><label>Nome do Professor<input name="teacher" required
+                        placeholder="Digite seu nome"></label><label>Nome do Aluno<input name="student" required
+                        placeholder="Digite o nome do aluno"></label><label>Ano/Série/Turma<input name="class" required
+                        placeholder="Ex.: 3º ano / 3º A"></label>
+                <div class="two-fields"><label>Data<input name="date" id="dateField"
+                            readonly></label><label>Horário<input name="time" id="timeField" readonly></label></div>
+                <label>Local<select name="place" required>
+                        <option value="">Selecione o local</option>
+                        <option>Banheiro</option>
+                        <option>Biblioteca</option>
+                        <option>Setor pedagógico</option>
+                        <option>Secretaria</option>
+                        <option>Outro</option>
+                    </select></label><button class="submit-auth" type="submit">ENVIAR AUTORIZAÇÃO</button>
+            </form>
+        </section>
+        <p class="prof-foot">Autoriza CESF · Sistema de liberação de alunos</p>
+    </main>
+    <div class="result-overlay" id="resultOverlay">
+        <section class="result-card">
+            <div class="result-icon">✓</div>
+            <h2>Autorização concluída com sucesso</h2>
+            <p>A autorização foi registrada no protótipo.</p><button id="newAuth">Nova autorização</button><a
+                href="acesso.html">Voltar ao início</a>
+        </section>
+    </div>
+    <script>const now = new Date(), pad = n => String(n).padStart(2, '0'); function fillDate() { document.getElementById('dateField').value = pad(now.getDate()) + '/' + pad(now.getMonth() + 1) + '/' + now.getFullYear(); document.getElementById('timeField').value = pad(now.getHours()) + ':' + pad(now.getMinutes()); } fillDate(); document.getElementById('authorizationForm').addEventListener('submit', e => { e.preventDefault(); const item = Object.fromEntries(new FormData(e.target)); item.status = "Pendente"; const list = JSON.parse(localStorage.getItem('cesf_prof_auth') || '[]'); list.push(item); localStorage.setItem('cesf_prof_auth', JSON.stringify(list)); localStorage.setItem('ac_auth', JSON.stringify(list)); document.getElementById('resultOverlay').classList.add('show'); }); document.getElementById('newAuth').addEventListener('click', () => { document.getElementById('resultOverlay').classList.remove('show'); document.getElementById('authorizationForm').reset(); fillDate(); });</script>
+</body>
+
+</html>

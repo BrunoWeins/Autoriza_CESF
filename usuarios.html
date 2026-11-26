@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários | Autoriza CESF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="usuarios">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+                <div><small>Autoriza CESF / Administração</small>
+                    <h1>Usuários</h1>
+                </div>
+                <div class="avatar">AD</div>
+            </header>
+            <div class="page-intro">
+                <p>Gerencie os professores e monitores que podem acessar o aplicativo.</p>
+            </div>
+            <div class="toolbar">
+                <div class="tabs"><button class="tab active" data-role-filter="Todos">Todos</button><button class="tab"
+                        data-role-filter="Professor">Professores</button><button class="tab"
+                        data-role-filter="Monitor">Monitores</button></div><button class="primary"
+                    data-open-modal="userModal">＋ Cadastrar usuário</button>
+            </div>
+            <section class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Usuários cadastrados</h3>
+                        <p>Contas com acesso ao Autoriza CESF</p>
+                    </div><input class="search" id="userSearch" placeholder="Buscar usuário...">
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Tipo de acesso</th>
+                                <th>E-mail</th>
+                                <th>Situação</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="userRows"></tbody>
+                    </table>
+                </div>
+            </section>
+            <div class="modal" id="userModal">
+                <form class="modal-card" id="userForm"><button type="button" class="close" data-close>×</button>
+                    <h2>Cadastrar usuário</h2><label>Nome completo<input name="name" required
+                            placeholder="Nome do usuário"></label><label>E-mail<input name="email" type="email" required
+                            placeholder="email@escola.com"></label><label>Tipo de acesso<select name="role">
+                            <option>Professor</option>
+                            <option>Monitor</option>
+                        </select></label><button class="primary">Salvar usuário</button>
+                </form>
+            </div>
+            <footer>Autoriza CESF · Protótipo demonstrativo</footer>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
